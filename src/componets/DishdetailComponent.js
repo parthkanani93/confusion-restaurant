@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardText, CardImgOverlay, CardImg, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, CardBody, CardText, CardImg, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 
 class DishDetail extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ class DishDetail extends Component {
                         <ListGroup className="col-12 col-md-5 m-1">
                            
                             <ListGroupItem>{comment.comment}</ListGroupItem>
-                            <ListGroupItem>{comment.author},{comment.date}</ListGroupItem>
+                            <ListGroupItem>--{comment.author},{comment.date}</ListGroupItem>
                         </ListGroup>
                     )}
                 </div>
