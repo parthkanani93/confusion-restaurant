@@ -1,67 +1,87 @@
 import React from 'react';
-import { Card, CardBody, CardText, CardImg, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, CardBody, CardText, CardImg, CardTitle, ListGroup, ListGroupItem, BreadcrumbItem, Breadcrumb } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
-    function RenderDish(dish) {
-        if (dish !== null) {
-            return (
-                <Card className="col-12 col-md-5 m-1">
-                    <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
-                    <CardBody>
-                        <CardTitle>{dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
+function RenderDish(dish) {
+    if (dish !== null) {
+        return (
+            <Card className="col-12 col-md-5 m-1">
+                <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
+                <CardBody>
+                    <CardTitle>{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
 
-                    </CardBody>
+                </CardBody>
 
-                </Card>
+            </Card>
 
-            );
-
-        }
-        else {
-            return (
-                <div></div>
-            );
-        }
+        );
 
     }
+    else {
+        return (
+            <div></div>
+        );
+    }
 
-   function RenderComments(dish) {
-        if (dish !== null) {
-            return (
+}
 
-                <div key={dish.comments.id}>
+function RenderComments(dish) {
+    if (dish !== null) {
+        return (
+            <div>
+                <div key={dish.id} >
                     <h1>Comments</h1>
-                    {dish.comments.map((comment) => 
-                        <ListGroup className="col-12 col-md-5 m-1">
-                           
+                    {dish.map((comment) =>
+
+                        <ListGroup  >
+
                             <ListGroupItem>{comment.comment}</ListGroupItem>
                             <ListGroupItem>--{comment.author},{comment.date}</ListGroupItem>
                         </ListGroup>
                     )}
                 </div>
+            </div>
 
-            );
+        );
 
-        }
-        else {
-            return (
-                <div></div>
-            );
-        }
     }
-  
+    else {
+        return (
+            <div></div>
+        );
+    }
+}
+
 
 
 function DishDetail(props) {
     return (
         <div className="container">
-            {RenderDish(props.dish)}
-            {RenderComments(props.dish)}
+            <div className="row">
+                <Breadcrumb>
+                    <BreadcrumbItem>
+                        <Link to='/menu'>Menu</Link>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem active>
+                        {props.dish.name}
+                    </BreadcrumbItem>
+
+                </Breadcrumb>
+                <div className="col-12">
+                    <h3>{props.dish.name}</h3>
+                    <hr />
+                </div>
+            </div>
+            <div className="row">
+                {RenderDish(props.dish)}
+                {RenderComments(props.comments)}
+            </div>
 
         </div>
     );
-    
+
 }
 
 export default DishDetail;
