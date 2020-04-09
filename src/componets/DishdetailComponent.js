@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardText, CardImg, CardTitle, ListGroup, ListGroupItem, BreadcrumbItem, Breadcrumb } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import Submitcomment from './submitcommentComponent'
 
 
 function RenderDish(dish) {
@@ -34,13 +35,19 @@ function RenderComments(dish) {
                 <div key={dish.id} >
                     <h1>Comments</h1>
                     {dish.map((comment) =>
+                        <React.Fragment>
+                            <ListGroup  >
 
-                        <ListGroup  >
-
-                            <ListGroupItem>{comment.comment}</ListGroupItem>
-                            <ListGroupItem>--{comment.author},{comment.date}</ListGroupItem>
-                        </ListGroup>
+                                <ListGroupItem>{comment.comment}</ListGroupItem>
+                                <ListGroupItem>--{comment.author},{comment.date}</ListGroupItem>
+                            </ListGroup>
+                            
+                        </React.Fragment>
                     )}
+                    <Submitcomment />
+
+
+
                 </div>
             </div>
 
