@@ -27,9 +27,8 @@ export default class Submitcomment extends Component {
       }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.name + '\ncomment was'+this.state.comment+' '+
-        ' \n rating was'+this.state.rating);
-        event.preventDefault();
+      this.toggleModal();
+      this.props.addComment(this.props.dishId,event.rating,event.author,event.comment);
     }
 
 
