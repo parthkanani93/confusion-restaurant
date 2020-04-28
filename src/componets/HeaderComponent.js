@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Jumbotron, Nav, NavItem, NavbarToggler, Collapse,Modal,Button,ModalHeader,ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { green } from 'color-name';
 
 class Header extends Component {
 
@@ -62,7 +63,7 @@ class Header extends Component {
                             </Nav>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <Button outline onClick={this.toggleModal}>
+                                    <Button outline onClick={this.toggleModal} className="bg-danger" style={{color : green}}>
                                         <span className="fa fa-sign-in fa-lg"></span>Login
                                     </Button>
                                 </NavItem>
