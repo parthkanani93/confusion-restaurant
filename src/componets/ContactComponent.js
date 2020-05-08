@@ -55,11 +55,11 @@ class Contact extends Component {
                     <div className="col-12 col-sm-4 offset-sm-1">
                         <h5>Our Address</h5>
                         <address>
-                            121, Clear Water Bay Road<br />
-                            Clear Water Bay, Kowloon<br />
-                            HONG KONG<br />
-                            <i className="fa fa-phone"></i>: +852 1234 5678<br />
-                            <i className="fa fa-fax"></i>: +852 8765 4321<br />
+                        123, Anyway  Road<br />
+		              Surat, Gujrat<br />
+		              India<br />
+                            <i className="fa fa-phone"></i>: +91 1234 5678<br />
+                            <i className="fa fa-fax"></i>: +91 8765 4321<br />
                             <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
                         </address>
                     </div>
